@@ -1,7 +1,7 @@
 import React from 'react';
 import album from '../../assets/public';
 
-function Modal({currentPhoto}) {
+function Modal({currentPhoto, onClose}) {
 
   const {name, category, description, index} = currentPhoto;
 
@@ -12,8 +12,8 @@ function Modal({currentPhoto}) {
         {/* <img src={require(`../../assets/large/${category}/${index}.jpg`)} alt="current category" /> */}
         <img src={album[`${category}_${index}`]} alt={category} />
         <p>{description}</p>
-        <button type="button">
-          Close this modal
+        <button type="button" onClick={onClose}>
+        Close this modal
         </button>
       </div>
     </div>
